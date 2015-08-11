@@ -45,4 +45,11 @@ describe(Tamagotchi) do
     end
   end
 
+  describe('#check_time') do
+    it('returns the stage the baby is in') do
+      tamagotchi = Tamagotchi.new(456789)
+      expect(tamagotchi.check_time()).to(eq(1))
+    end
+  end
+
 end

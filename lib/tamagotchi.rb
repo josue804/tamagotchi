@@ -7,6 +7,7 @@ class Tamagotchi
   @@sleeping = 3
   @@happiness = 0
   @@name = 'neglect'
+  @@time_passed = 0
 
   define_method(:initialize) do |color_key|
     @color_key = color_key
@@ -33,7 +34,31 @@ class Tamagotchi
   end
 
   define_method(:check_time) do
-    @@time - @@time.Time.new()
+    if @@time - Time.new() < -30
+      #decrease random
+      to_decrease = rand() % 3
+
+      if to_decrease == 0
+        #decrease food
+      elsif to_decrease == 1
+        #decrease play
+      elsif to_decrease == 2
+        #decrease sleep
+      end
+
+      @@time_passed += @@time - Time.new()
+      @@time = Time.new()
+    end
+
+    if @@time_passed <= 0 && @@time_passed > -15
+      1
+    elsif @@time_passed < -15 && @@time_passed >= -45
+      2
+    elsif @@time_passed < -45 && @@time_passed >= -90
+      3
+    elsif @@time_passed < -90
+      4
+    end
   end
 
   define_method(:name) do |name = "neglect"|
