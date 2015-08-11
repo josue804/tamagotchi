@@ -58,4 +58,11 @@ describe(Tamagotchi) do
       expect(tamagotchi.decrease()).to(eq(true))
     end
   end
+
+  describe('#death') do
+    it('shows the death screen when a tamagotchi dies') do
+      tamagotchi = Tamagotchi.new(456789)
+      expect(tamagotchi.death()).to(eq('YOU MONSTER YOU KILLED IT!'))
+    end
+  end
 end

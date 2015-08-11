@@ -63,7 +63,7 @@ class Tamagotchi
 
   define_method(:decrease) do
     to_decrease = (rand() % 3).floor()
-
+    
     if to_decrease == 0
       @@hunger -= 1
       true#decrease food
