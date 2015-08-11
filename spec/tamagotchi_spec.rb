@@ -31,10 +31,10 @@ describe(Tamagotchi) do
     end
   end
 
-  describe('#birth') do
-    it('show the new born tamagotchi on the index page') do
+  describe('#happyness') do
+    it('shows the happyness of the tamagotchi on index page') do
       tamagotchi = Tamagotchi.new(456789)
-      expect(tamagotchi.birth).to(eq(3))
+      expect(tamagotchi.happyness(1)).to(eq(2))
     end
   end
 
@@ -42,13 +42,6 @@ describe(Tamagotchi) do
     it('returns the name of the baby tamagotchi') do
       tamagotchi = Tamagotchi.new(456789)
       expect(tamagotchi.name('Mina')).to(eq('Mina'))
-    end
-  end
-
-  describe('#baby') do
-    it('shows the happiness level of the baby') do
-      tamagotchi = Tamagotchi.new(456789)
-      expect(tamagotchi.baby).to(eq(3))
     end
   end
 
