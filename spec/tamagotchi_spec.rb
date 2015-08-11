@@ -5,8 +5,8 @@ describe(Tamagotchi) do
 
   describe('#birth') do
     it('an egg appears on the index page') do
-      tamagotchi = Tamagotchi.new(4567)
-      expect(tamagotchi.birth).to(include("Egg appears"))
+      tamagotchi = Tamagotchi.new(456789)
+      expect(tamagotchi.birth).to(eq(456789))
     end
   end
 
