@@ -63,7 +63,7 @@ class Tamagotchi
 
   define_method(:decrease) do
     to_decrease = (rand() % 3).floor()
-    
+
     if to_decrease == 0
       @@hunger -= 1
       true#decrease food
@@ -76,6 +76,14 @@ class Tamagotchi
     end
 
 
+  end
+
+  define_method(:death) do
+    if @@happiness < 1
+      'YOU MONSTER YOU KILLED IT!'
+    else
+      'ALL GOOD'
+    end
   end
 
 end
