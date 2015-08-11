@@ -5,7 +5,9 @@ class Tamagotchi
     @color_key = color_key
   end
 
-  define_method(:birth) do
+  define_method(:egg) do
     @color_key
   end
+
+
 end
