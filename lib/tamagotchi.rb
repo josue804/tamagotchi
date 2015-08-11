@@ -35,16 +35,8 @@ class Tamagotchi
 
   define_method(:check_time) do
     if @@time - Time.new() < -30
-      #decrease random
-      to_decrease = rand() % 3
 
-      if to_decrease == 0
-        #decrease food
-      elsif to_decrease == 1
-        #decrease play
-      elsif to_decrease == 2
-        #decrease sleep
-      end
+      decrease
 
       @@time_passed += @@time - Time.new()
       @@time = Time.new()
@@ -67,6 +59,23 @@ class Tamagotchi
 
   define_method(:baby) do
     @@happiness
+  end
+
+  define_method(:decrease) do
+    to_decrease = (rand() % 3).floor()
+
+    if to_decrease == 0
+      @@hunger -= 1
+      true#decrease food
+    elsif to_decrease == 1
+      @@playing -= 1#decrease play
+      true
+    elsif to_decrease == 2
+      @@sleeping -= 1#decrease sleep
+      true
+    end
+
+
   end
 
 end

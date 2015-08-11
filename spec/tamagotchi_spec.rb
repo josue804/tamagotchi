@@ -52,4 +52,10 @@ describe(Tamagotchi) do
     end
   end
 
+  describe('#decrease') do
+    it('decreases sleep, hunger, or playing level randomly by 1') do
+      tamagotchi = Tamagotchi.new(456789)
+      expect(tamagotchi.decrease()).to(eq(true))
+    end
+  end
 end
