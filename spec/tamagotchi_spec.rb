@@ -38,4 +38,18 @@ describe(Tamagotchi) do
     end
   end
 
+  describe('#name') do
+    it('returns the name of the baby tamagotchi') do
+      tamagotchi = Tamagotchi.new(456789)
+      expect(tamagotchi.name('Mina')).to(eq('Mina'))
+    end
+  end
+
+  describe('#baby') do
+    it('shows the happiness level of the baby') do
+      tamagotchi = Tamagotchi.new(456789)
+      expect(tamagotchi.baby).to(eq(3))
+    end
+  end
+
 end

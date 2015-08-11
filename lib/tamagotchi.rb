@@ -4,7 +4,8 @@ class Tamagotchi
   @@hunger = 0
   @@playing = 0
   @@sleeping = 0
-  @@happiness = 0 
+  @@happiness = 0
+  @@name = 'neglect'
 
   define_method(:initialize) do |color_key|
     @color_key = color_key
@@ -29,5 +30,10 @@ class Tamagotchi
   define_method(:birth) do |happy = 3|
     @@happiness = (@@hunger + @@playing + @@sleeping)/3.floor
   end
+
+  define_method(:name) do |name = "neglect"|
+    @@name = name
+  end
+  
 
 end
